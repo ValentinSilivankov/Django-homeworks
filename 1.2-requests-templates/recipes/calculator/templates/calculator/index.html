@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Рецепты</title>
+    <style>
+        .colortext {
+          color: red; /* Красный цвет выделения */
+        }
+       </style>
 </head>
 <body>
+    <h2>Рецепт {{ name }}</h2>
+    <h3>Колличество человек: <span class="colortext">{{ person_count }}</span> шт.</h3>
+    <hr>
+    Ингредиенты:<br>
 {% for ingredient, amount in recipe.items %}
-    <p>{{ ingredient }}: {{ amount }}</p>
+    <br>{{ ingredient }}: {{ amount }}
 {% empty %}
     <p>Такого рецепта не знаю :(</p>
 {% endfor %}
+<hr>
+<h4><a href="{{ home }}">Домашняя страница</a></h4>
 </body>
 </html>
